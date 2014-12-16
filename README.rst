@@ -10,7 +10,8 @@ It's easy::
 
     CACHES = {
         'default' : {
-            'BACKEND' : 'django_mongodb_cache.MongoDBCache'
+            'BACKEND' : 'django_mongodb_cache.MongoDBCache',
+            'LOCATION': 'django_cache'
         }
     }
 

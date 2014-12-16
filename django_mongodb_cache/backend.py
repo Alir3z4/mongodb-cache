@@ -15,6 +15,15 @@ class MongoDBCache(BaseDatabaseCache):
             raise ValueError("Cache keys must not contain '.' or '$' "
                              "if using MongoDB cache backend")
         super(MongoDBCache, self).validate_key(key)
+    
+    def make_key(self, key, version=None):
+        """
+         Additional regexp to remove $ and . cachaters,
+        as they cause special behaviour in mongodb
+        """
+        key = super(MongoDBCache, self).make_key(key, version)
+
+        return re.sub(r'\$|\.', '', key)
 
     def get(self, key, default=None, version=None, raw=False, raw_key=False):
         if not raw_key:

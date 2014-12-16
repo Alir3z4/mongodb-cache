@@ -10,12 +10,6 @@ import pymongo
 import bson
 
 class MongoDBCache(BaseDatabaseCache):
-    def validate_key(self, key):
-        if '.' in key or '$' in key:
-            raise ValueError("Cache keys must not contain '.' or '$' "
-                             "if using MongoDB cache backend")
-        super(MongoDBCache, self).validate_key(key)
-    
     def make_key(self, key, version=None):
         """
          Additional regexp to remove $ and . cachaters,

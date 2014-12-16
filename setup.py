@@ -13,7 +13,7 @@ CLASSIFIERS = [
 
 setup(
     name='django_mongodb_cache',
-    version='0.3',
+    version='2014.12.16',
     author='Jonas Haag',
     author_email='jonas@lophus.org',
     url='https://github.com/django-mongodb-engine/mongodb-cache',

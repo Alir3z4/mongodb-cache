@@ -1,6 +1,10 @@
 import time
+import re
+
 from django.core.cache.backends.db import BaseDatabaseCache
 from django.db import connections, router
+
+
 try:
     import cPickle as pickle
 except ImportError:

@@ -1,4 +1,4 @@
-__version__ = (0, 3, 0)
+__version__ = (2014, 12, 16)
 __author__ = "Jonas Haag <jonas@lophus.org>"
 
 from backend import MongoDBCache
